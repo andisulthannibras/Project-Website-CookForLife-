@@ -60,7 +60,7 @@ Route::get('authenticated', [AuthenticationController::class, 'authenticated']);
 //Profile
 //prefix profile
 Route::prefix('profile')->group(function () {
-    Route::get('/', [ProfileController::class, 'index']);
+    Route::get('/', [ProfileController::class, 'index'])->name('profile');
     Route::get('/{id}', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::post('/{id}', [ProfileController::class, 'update'])->name('profile.update');
 });
