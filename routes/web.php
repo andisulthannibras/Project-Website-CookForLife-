@@ -43,11 +43,11 @@ Route::get('/login', function () {
 
 Route::get('/detail resep', function () {
     return view('detail resep/all');
-}); 
+});
 
 Route::get('/detail resep 2', function () {
     return view('detail resep 2/all');
-}); 
+});
 //login register routes
 Route::get('authenticated', [AuthenticationController::class, 'authenticated']);
 // Route::get('login', [AuthenticationController::class, 'login'])->name('login');
@@ -58,4 +58,4 @@ Route::post('register', [AuthenticationController::class, 'register'])->name('re
 Route::get('authenticated', [AuthenticationController::class, 'authenticated']);
 
 //Profile
-// Route::get('profile', [ProfileController::class, 'profile'])->name('profile')->middleware('auth');
+ Route::get('profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
