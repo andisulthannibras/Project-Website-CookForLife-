@@ -37,6 +37,30 @@ class ProfileController extends Controller
     return view('profile.all', compact('user'));
 }
 
+//edit profile (GET)
+public function edit($id)
+{
+    $user = User::findOrFail($id);
+    return view('profile.edit', compact('user'));
+}
+
+
+    public function update(Request $request, $id)
+    {
+        $profile = User::findOrFail($id);
+
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'alamat' => 'required|string|max:255',
+            'email' => 'required|email|unique:profiles,email,'.$profile->id,
+            'no_hp' => 'required|string|max:15',
+        ]);
+
+        $profile->update($validatedData);
+
+        return response()->json(['message' => 'Profil berhasil diperbarui']);
+    }
+
 public function show($id)
 {
     $profile = User::findOrFail($id);
@@ -57,21 +81,7 @@ public function store(Request $request)
     return response()->json(['message' => 'Profil berhasil ditambahkan']);
 }
 
-public function update(Request $request, $id)
-{
-    $profile = User::findOrFail($id);
 
-    $validatedData = $request->validate([
-        'name' => 'required|string|max:255',
-        'alamat' => 'required|string|max:255',
-        'email' => 'required|email|unique:profiles,email,'.$profile->id,
-        'no_hp' => 'required|string|max:15',
-    ]);
-
-    $profile->update($validatedData);
-
-    return response()->json(['message' => 'Profil berhasil diperbarui']);
-}
 
 public function destroy($id)
 {

@@ -58,4 +58,10 @@ Route::post('register', [AuthenticationController::class, 'register'])->name('re
 Route::get('authenticated', [AuthenticationController::class, 'authenticated']);
 
 //Profile
- Route::get('profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
+//prefix profile
+Route::prefix('profile')->group(function () {
+    Route::get('/', [ProfileController::class, 'index']);
+    Route::get('/{id}', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::post('/{id}', [ProfileController::class, 'update']);
+    Route::delete('/{id}', [ProfileController::class, 'destroy']);
+});

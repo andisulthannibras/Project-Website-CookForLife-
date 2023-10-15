@@ -78,7 +78,7 @@
             <a>menambah ilmu masakan dan menamnbah wawasan tentang masakan.</a>
             <div class="btn-bawah">
                 <div class="edit-btn">
-                    <button>edit</button>
+                    <a href="{{route('profile.edit',$user->id)}}">edit</a>
                 </div>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
