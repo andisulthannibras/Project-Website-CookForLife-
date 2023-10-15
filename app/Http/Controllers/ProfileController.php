@@ -50,15 +50,20 @@ public function edit($id)
         $profile = User::findOrFail($id);
 
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'alamat' => 'required|string|max:255',
-            'email' => 'required|email|unique:profiles,email,'.$profile->id,
-            'no_hp' => 'required|string|max:15',
+            'name' => 'required|string',
+            'email' => 'required|email|unique:users,email',
+            'alamat' => 'required|string',
         ]);
 
-        $profile->update($validatedData);
-
-        return response()->json(['message' => 'Profil berhasil diperbarui']);
+        if ($validatedData->fails()) {
+            return redirect()->back()->withErrors($validatedData)->withInput();
+        } else {
+            try {
+                $profile->update($validatedData);
+            } catch (\Throwable $th) {
+                return redirect()->back()->withErrors($th->getMessage())->withInput();
+            }
+        }
     }
 
 public function show($id)

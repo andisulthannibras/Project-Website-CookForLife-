@@ -62,6 +62,5 @@ Route::get('authenticated', [AuthenticationController::class, 'authenticated']);
 Route::prefix('profile')->group(function () {
     Route::get('/', [ProfileController::class, 'index']);
     Route::get('/{id}', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::post('/{id}', [ProfileController::class, 'update']);
-    Route::delete('/{id}', [ProfileController::class, 'destroy']);
+    Route::post('/{id}', [ProfileController::class, 'update'])->name('profile.update');
 });
