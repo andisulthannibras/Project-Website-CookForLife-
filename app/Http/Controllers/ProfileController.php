@@ -14,7 +14,7 @@ class ProfileController extends Controller
     // $user = User::findOrFail($id);
     // return response()->json($user);
     // }
-    
+
     // public function update(Request $request, $id)
     // {
     // $user = User::findOrFail($id);
@@ -33,8 +33,8 @@ class ProfileController extends Controller
     // }
     public function index()
 {
-    $profiles = User::all();
-    return view('/'); 
+    $user = Auth::user();
+    return view('profile.all', compact('user'));
 }
 
 public function show($id)
