@@ -141,10 +141,15 @@ class AuthenticationController extends Controller
     }
     
     public function logout(Request $request){
-        $request->user()->currentAccessToken()->delete();
+        // $request->user()->currentAccessToken()->delete();
 
-        return response()->json([
-            'message' => 'Berhasil Logout !'
-        ], 200)->header('Location', '/home');
+        // return response()->json([
+        //     'message' => 'Berhasil Logout !'
+        // ], 200)->header('Location', '/home');
+        Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+
+    return redirect('/home');
     }
 }
