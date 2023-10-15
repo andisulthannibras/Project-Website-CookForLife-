@@ -60,7 +60,7 @@
                             <p>Email</p>
                         </div>
                         <div class="textfield-bio">
-                            <p>{{$user->email}}/p>
+                            <p>{{$user->email}}</p>
                         </div>
                     </div>
                     {{-- <div class="Bio">
