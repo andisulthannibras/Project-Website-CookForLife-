@@ -1,0 +1,19 @@
+h1 {
+    color: gray;
+    font-weight: bold;
+    padding-top: 70px;
+}
+
+p {
+    font-weight: bold;
+    font-size: 20px;
+    color: gray;
+}
+
+.tagnya {
+    font-weight: bold;
+    margin-left: 45px;
+    padding-top: 20px;
+    font-size: small;
+
+}

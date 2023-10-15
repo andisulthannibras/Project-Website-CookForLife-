@@ -1,0 +1,94 @@
+/* Gaya dasar footer */
+footer {
+    background-color: #333;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    /* border-radius: 15px; */
+    color: #fff;
+    padding: 20px 0;
+    font-family: inika;
+    width: auto;
+    height: 50vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Gaya logo footer */
+.footer-logo {
+    width: 100%;
+    padding-top: 20px;
+    /* Atur lebar logo sesuai dengan kebutuhan Anda */
+    height: auto;
+}
+
+/* Gaya tautan footer */
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-about ul {
+    list-style: none;
+    padding-top: 35px;
+}
+
+.footer-about ul li {
+    margin-bottom: 10px;
+}
+
+.footer-about a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-about img {
+    flex-shrink: 0;
+    width: 29px;
+    height: 29px;
+    margin-right: 10px;
+}
+
+/* Gaya media sosial footer */
+.footer-social a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Gaya teks footer */
+.footer-bottom p {
+    padding-top: 20px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    background-size: cover;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+/* Gaya media sosial footer */
+.footer-social a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 10px;
+    font-size: 18px;
+}

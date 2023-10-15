@@ -1,0 +1,113 @@
+/* Gaya navbar */
+.navbar {
+    background-color: white;
+    color: #000;
+    /* Menggunakan warna teks yang lebih kontras untuk kejelasan */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 10px 20px; */
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    width: 126px;
+    height: 73px;
+    margin-right: 20px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #000;
+    /* Menggunakan warna teks yang lebih kontras untuk kejelasan */
+    font-size: 19px;
+    font-weight: bold;
+    margin-left: 20px;
+    font-family: 'inika', sans-serif;
+    /* Margin antara logo dan teks */
+}
+
+/* Gaya tombol Sign Up dan Login */
+.navbar-buttons {
+    display: flex;
+    align-items: center;
+    font-family: 'inika', sans-serif;
+}
+
+.btn {
+    /* padding: 10px 20px; */
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    font-family: 'inika', sans-serif;
+    text-align: center;
+    display: flex;
+    /* Menggunakan flexbox */
+    flex-direction: column;
+    /* Menyusun elemen secara vertikal */
+    justify-content: center;
+    /* Mengatur teks ke tengah secara vertikal */
+    align-items: center;
+    /* Mengatur teks ke tengah secara horizontal */
+}
+
+.btn-signup {
+    background-color: #2E2E2E;
+    border: 2px solid #2E2E2E;
+    height: 34px;
+    width: 111px;
+}
+
+.btn-signup:hover {
+    background-color: white;
+    color: black;
+    border-color: #2E2E2E;
+}
+
+.btn-login {
+    border: 2px solid #2E2E2E;
+    background: #FFF;
+    color: black;
+    height: 34px;
+    width: 111px;
+}
+
+.btn-login:hover {
+    background-color: #2E2E2E;
+    color: #fff;
+    border-color: #2E2E2E;
+}
+
+/* Menggeser tombol ke pojok kanan */
+.navbar-buttons {
+    display: flex;
+    margin-left: auto;
+    /* Menggunakan margin-left: auto untuk menjepit tombol ke kanan */
+}
+
+.btn-signup,
+.btn-login {
+    margin-left: 10px;
+    /* Margin antara tombol */
+}
+
+.profile-circle {
+    width: 30px;
+    height: 30px;
+    background-color: #555;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+}

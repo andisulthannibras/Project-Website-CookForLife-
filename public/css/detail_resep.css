@@ -1,0 +1,178 @@
+.detail {
+    display: flex;
+    align-items: center;
+}
+
+.image-content img {
+    margin-top: 90px;
+    margin-left: 100px;
+    width: 550px;
+    height: 293px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.59);
+}
+
+.text-head {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.text-head h3 {
+    color: #000;
+    margin-top: 80px;
+    font-family: Inika;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.text-wrapper {
+    color: #6B6767;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 10px;
+}
+
+.info-container {
+    width: 603px;
+    height: 145px;
+    border-radius: 20px;
+    border: 2px solid #FFF;
+    background: #2E2E2E;
+    display: flex;
+    justify-content: center;
+    /* Untuk mengatur secara horizontal di tengah */
+    align-items: center;
+    margin-top: 30px;
+}
+
+.text-time {
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+}
+
+.text-time h5 {
+    font-family: Inika;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.kesulitan {
+    justify-content: space-around;
+    display: flex;
+    margin-bottom: auto;
+    margin-top: 15px;
+}
+
+.kesulitan h5 {
+    font-family: Inika;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.text-body {
+    display: flex;
+    flex-direction: column;
+    margin-left: 95px;
+}
+
+.text-body img {
+    width: 40px;
+    height: 40px;
+    stroke-width: 4px;
+    stroke: #000;
+}
+
+.text-body h1 {
+    color: #000;
+    font-family: Inika;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 9%;
+}
+
+.text-body p {
+    margin-top: 20px;
+    width: 989px;
+    height: 80px;
+    color: #000;
+    font-family: Inika;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.content-item {
+    display: flex;
+    justify-content: space-around;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 95px;
+    margin-top: 45px;
+    margin-bottom: 50px;
+}
+
+.text-content h1 {
+    color: #2E2E2E;
+    font-family: Inika;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.text-content p {
+    margin-top: 30px;
+    width: 530px;
+    height: 80px;
+    color: #2E2E2E;
+    font-family: Inika;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+.text-content hr {
+    width: 569px;
+    border: 2px solid #000;
+}
+
+.image-item {
+    flex-direction: column;
+    margin-top: 40px;
+    margin-left: 170px;
+}
+
+.image-item h1 {
+    margin-left: 20px;
+    color: #000;
+    font-family: Inika;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.image-item img {
+    border-radius: 20px;
+}
