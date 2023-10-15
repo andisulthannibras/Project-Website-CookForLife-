@@ -44,7 +44,7 @@
                             <p>Nama</p>
                         </div>
                         <div class="textfield-bio">
-                            <p>Andi</p>
+                            <p>{{$user->name}}</p>
                         </div>
                     </div>
                     <div class="Bio">
@@ -52,7 +52,7 @@
                             <p>Alamat</p>
                         </div>
                         <div class="textfield-bio">
-                            <p>Makassar</p>
+                            <p>{{$user->alamat}}</p>
                         </div>
                     </div>
                     <div class="Bio">
@@ -60,7 +60,7 @@
                             <p>Email</p>
                         </div>
                         <div class="textfield-bio">
-                            <p>andi@gmail.com</p>
+                            <p>{{$user->email}}/p>
                         </div>
                     </div>
                     {{-- <div class="Bio">
@@ -85,7 +85,7 @@
                     <div class="logout-btn">
                         <button>logout</button>
                     </div>
-                </form>                
+                </form>
             </div>
         </div>
         @include('nav.footer')
