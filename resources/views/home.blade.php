@@ -6,21 +6,22 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Home</title>
         <link href='https://fonts.googleapis.com/css?family=Inika' rel='stylesheet'>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
         <link rel="stylesheet" href="/css/home.css">
     </head>
     <body>
-        @guest
-        @include('nav.nav_before_login')
-    @else
-        @include('nav.nav_after_login')
-    @endguest
-
-    <main>
-        @yield('content')
-    </main>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        @include('nav.nav')
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
         <div class="home" id="home">
             <div class="content">
                 <div class="text-content">
@@ -57,7 +58,7 @@
         <div class="visi">
             <div class="content-items">
                 <div class="text-content">
-                    <h1 style="color:black;">Visi Cook For Life !</h1>                    
+                    <h1 style="color:black;">Visi Cook For Life !</h1>
                     <h3 style="padding-top: 20px;">meningkatkan keterampilan memasak mereka</h3>
                     <h3>dengan cara yang menyenangkan dan efektif. Hal</h3>
                     <h3>ini diharapkan dapat membantu individu untuk</h3>

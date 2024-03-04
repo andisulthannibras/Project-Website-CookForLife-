@@ -18,23 +18,23 @@
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"></script>
-        @foreach ($data as $detail_2)
+            @foreach ($data as  $detail_3)
         <div class="detail" id="detail">
             <div class="image-content">
-                <img src="{{$detail_2->image}}" alt="">
+                <img src="{{$detail_3->image}}" alt="">
             </div>
             <div class="text-head">
-                <h3>{{$detail_2->nama}}</h3>
-                <div class="text-wrapper">{{$detail_2->pencipta}}</div>
+                <h3>{{$detail_3->nama}}</h3>
+                <div class="text-wrapper">{{$detail_3->pencipta}}</div>
                 <div class="info-container text-white">
                     <div class="tengah">
                         <div class="text-time ">
-                            <h5><img src="/image/time.png" style="margin-right: 20px;">{{$detail_2->durasi}}</h5>
+                            <h5><img src="/image/time.png" style="margin-right: 20px;">{{$detail_3->durasi}}</h5>
                             <h5 style="margin-left: 20px; margin-right: 20px;">|</h5>
-                            <h5><img src="/image/porsi.png" style="margin-left: 10px; margin-right: 20px;">{{$detail_2->porsi}}</h5>
+                            <h5><img src="/image/porsi.png" style="margin-left: 10px; margin-right: 20px;">{{$detail_3->porsi}}</h5>
                         </div>
                         <div class="kesulitan">
-                            <h5><img src="/image/hat.png" style="margin-right: 20px;" alt="">{{$detail_2->tingkat_kesulitan}}</h5>
+                            <h5><img src="/image/hat.png" style="margin-right: 20px;" alt="">{{$detail_3->tingkat_kesulitan}}</h5>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
         </div>
         <div class="text-body">
             <h1><img src="/image/note.png" style="margin-right: 30px;" alt="">Catatan</h1>
-            <p>{{$detail_2->catatan}}</p>
+            <p>{{$detail_3->catatan}}</p>
         </div>
         <div class="content-item">
             <div class="text-content">
@@ -51,11 +51,9 @@
                 <hr>
                 <p>2 Rendam jamur kuping dengan air hangat sampai lunak, tiriskan.</p>
                 <hr>
-                <p>3 Tumis bawang putih dan jahe hingga harum, lalu masukkan daging wagyu, tumis
-                    sampai berubah warna.</p>
+                <p>3 Tumis bawang putih dan jahe hingga harum, lalu masukkan daging wagyu, tumis sampai berubah warna.</p>
                 <hr>
-                <p>4 Tambahkan air kaldu, cabai yang dihaluskan, kecap jepang, kecap manis,
-                    garam dan gula sesuai selera.</p>
+                <p>4 Tambahkan air kaldu, cabai yang dihaluskan, kecap jepang, kecap manis, garam dan gula sesuai selera.</p>
                 <hr>
                 <p>5 Masukkan mie, jamur kuping dan sawi, semua masak sampai sawi layu. Angkat.</p>
                 <hr>
@@ -63,12 +61,13 @@
             </div>
             <div class="image-item">
                 <h1>Gambar</h1>
-                <img src="{{$detail_2->image_1}}" alt="">
-                <img src="{{$detail_2->image_2}}" alt="">
-                <img src="{{$detail_2->image_3}}" alt="">
-                <img src="{{$detail_2->image_4}}" alt="">
+                <img src="{{$detail_3->image_1}}" alt="">
+                <img src="{{$detail_3->image_2}}" alt="">
+                <img src="{{$detail_3->image_3}}" alt="">
+                <img src="{{$detail_3->image_4}}" alt="">
             </div>
-        </div>
-        @endforeach @include('nav.footer')
+        </div>        
+        @endforeach
+        @include('nav.footer')
     </body>
 </html> --}}

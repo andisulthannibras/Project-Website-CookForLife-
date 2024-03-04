@@ -14,42 +14,39 @@
         <link href='https://fonts.googleapis.com/css?family=Inika' rel='stylesheet'>
     </head>
     <body>
-
-        @guest
-        @include('nav.nav_before_login')
-    @else
-        @include('nav.nav_after_login')
-    @endguest
-
-    <main>
-        @yield('content')
-    </main>        
-    <script
+        @include('nav.nav')
+        <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script>            
+        @foreach ($resep as $resep)
+        {{-- @foreach ($data as $detail) --}}
         <div class="box">
             <div class="ramen">
                 <div class="overlap">
-                    <div class="overlap-group"><img class="image" src="/image/resep 1.png"/></div>
+                    <div class="overlap-group"><img class="image" src="{{$resep->image}}"/></div>
                     <p class="text-wrapper">
-                        A French beef stew braised in red wine, often red Burgundy, and beef stock,
-                        typically flavored with carrots, onions, garlic, and a bouquet garni, and
-                        garnished with pearl onions, mushrooms, and bacon.
+                        {{$resep->deskripsi}}
                     </p>
                     <div class="name-by-desc">
-                        <div class="div">Resep Ramen</div>
-                        <div class="text-wrapper-2">by Yoshihiro Murata</div>
-                    </div>
+                        <div class="div">{{$resep->nama}}</div>
+                        <div class="text-wrapper-2" >{{$resep->pencipta}}</div>
+                    </div>                    
                     <div class="read-and-more">
-                        <div class="line"></div>
+                        <div class="line"></div>                        
                         <div class="read-btn">
-                            <div class="div-wrapper">
-                                <div class="text-wrapper-3" ><a href="/detail resep" style="text-decoration: none; color: white;">Read</a></div>
+                            <div class="div-wrapper">                            
+                                <div class="text-wrapper-3">                                                                    
+                                    <a href="/detail resep/{{$resep->id}}" >
+                                        <button>Baca Resep</button>
+                                    </a>
+                                    {{-- <a href="{{ route('detail resep', ['id' => $resep->id]) }}">Read</a> --}}
+                                    {{-- <a href="{{ route('detail resep', ['id' => $detail->id]) }}" style="text-decoration: none; color: white;">Read</a> --}}
+                                </div>
                             </div>
                         </div>
                         <div class="last-updated-rating">
-                            <p class="p">Last updated 12 Mar 21</p>
+                            <p class="p">{{$resep->last_update}}</p>
                             <div class="rating-and-rev">
                                 <div class="rating">
                                     <img class="star" src="/image/star.png" alt=""/>
@@ -58,32 +55,36 @@
                                     <img class="star-3" src="/image/star.png" alt=""/>
                                     <img class="star-4" src="/image/star abu.png" alt=""/>
                                 </div>
-                                <div class="text-wrapper-4">(144)</div>
+                                <div class="text-wrapper-4">{{$resep->rating}}</div>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
             </div>
+            {{-- @endforeach --}}
+            @endforeach 
+            {{-- @foreach ($resep_2 as $resep)
             <div class="ramen">
                 <div class="overlap">
-                    <div class="overlap-group"><img class="image" src="/image/resep 2.png"/></div>
+                    <div class="overlap-group"><img class="image" src="{{$resep->image}}"/></div>
                     <p class="text-wrapper">
-                        Potatoes dauphinoise is how the French say casserole of potatoes, heavy cream,
-                        and cheese.
+                        {{$resep->deskripsi}}
                     </p>
                     <div class="name-by-desc">
-                        <div class="div">Soupe l'oignon</div>
-                        <div class="text-wrapper-2">by Marie Julie Grandjean Mouquin</div>
+                        <div class="div">{{$resep->nama}}</div>
+                        <div class="text-wrapper-2">{{$resep->pencipta}}</div>
                     </div>
                     <div class="read-and-more">
                         <div class="line"></div>
                         <div class="read-btn">
                             <div class="div-wrapper">
-                                <div class="text-wrapper-3" ><a href="/detail resep 2" style="text-decoration: none; color: white;">Read</a></div>
+                                <div class="text-wrapper-3">
+                                    <a href="/detail resep 2" style="text-decoration: none; color: white;">Read</a>
+                                </div>
                             </div>
                         </div>
                         <div class="last-updated-rating">
-                            <p class="p">Last updated 12 Mar 21</p>
+                            <p class="p">{{$resep->last_update}}</p>
                             <div class="rating-and-rev">
                                 <div class="rating">
                                     <img class="star" src="/image/star.png" alt=""/>
@@ -92,33 +93,34 @@
                                     <img class="star-3" src="/image/star abu.png" alt=""/>
                                     <img class="star-4" src="/image/star abu.png" alt=""/>
                                 </div>
-                                <div class="text-wrapper-4">(122)</div>
+                                <div class="text-wrapper-4">{{$resep->rating}}</div>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
             </div>
+            @endforeach @foreach ($resep_3 as $resep)
             <div class="ramen">
                 <div class="overlap">
-                    <div class="overlap-group"><img class="image" src="/image/resep 3.png"/></div>
+                    <div class="overlap-group"><img class="image" src="{{$resep->image}}"></div>
                     <p class="text-wrapper">
-                        Croissants are a quintessential French pastry that have become popular all over
-                        the world. They are made with layers of buttery, flaky dough that is rolled and
-                        folded to create a distinctive crescent shape.
+                        {{$resep->deskripsi}}
                     </p>
                     <div class="name-by-desc">
-                        <div class="div">Langue de Boeuf</div>
-                        <div class="text-wrapper-2">by Alain Ducasse</div>
+                        <div class="div">{{$resep->nama}}</div>
+                        <div class="text-wrapper-2">{{$resep->pencipta}}</div>
                     </div>
                     <div class="read-and-more">
                         <div class="line"></div>
                         <div class="read-btn">
                             <div class="div-wrapper">
-                                <div class="text-wrapper-3" ><a href="/detail resep" style="text-decoration: none; color: white;">Read</a></div>
+                                <div class="text-wrapper-3">
+                                    <a href="/detail resep 3" style="text-decoration: none; color: white;">Read</a>
+                                </div>
                             </div>
                         </div>
                         <div class="last-updated-rating">
-                            <p class="p">Last updated 12 Mar 21</p>
+                            <p class="p">{{$resep->last_update}}</p>
                             <div class="rating-and-rev">
                                 <div class="rating">
                                     <img class="star" src="/image/star.png" alt=""/>
@@ -127,34 +129,34 @@
                                     <img class="star-3" src="/image/star.png" alt=""/>
                                     <img class="star-4" src="/image/star.png" alt=""/>
                                 </div>
-                                <div class="text-wrapper-4">(150)</div>
+                                <div class="text-wrapper-4">{{$resep->rating}}</div>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
             </div>
+            @endforeach @foreach ($resep_4 as $resep)
             <div class="ramen">
                 <div class="overlap">
-                    <div class="overlap-group"><img class="image" src="/image/resep 4.png"/></div>
+                    <div class="overlap-group"><img class="image" src="{{$resep->image}}"/></div>
                     <p class="text-wrapper">
-                        The dish sees chicken braised with wine, mushrooms, salty pork or bacon,
-                        mushrooms, onions, garlic, and sometimes even a drop of brandy. Although the
-                        name translates as ‘rooster in wine’ – the braising is ideal for tougher birds –
-                        the recipe usually uses chicken or capon.
+                        {{$resep->deskripsi}}
                     </p>
                     <div class="name-by-desc">
-                        <div class="div">Lasagna</div>
-                        <div class="text-wrapper-2">by Samina Jalil</div>
+                        <div class="div">{{$resep->nama}}</div>
+                        <div class="text-wrapper-2">{{$resep->pencipta}}</div>
                     </div>
                     <div class="read-and-more">
                         <div class="line"></div>
                         <div class="read-btn">
                             <div class="div-wrapper">
-                                <div class="text-wrapper-3" ><a href="/detail resep" style="text-decoration: none; color: white;">Read</a></div>
+                                <div class="text-wrapper-3">
+                                    <a href="/detail resep 4" style="text-decoration: none; color: white;">Read</a>
+                                </div>
                             </div>
                         </div>
                         <div class="last-updated-rating">
-                            <p class="p">Last updated 12 Mar 21</p>
+                            <p class="p">{{$resep->last_update}}</p>
                             <div class="rating-and-rev">
                                 <div class="rating">
                                     <img class="star" src="/image/star.png" alt=""/>
@@ -163,13 +165,14 @@
                                     <img class="star-3" src="/image/star.png" alt=""/>
                                     <img class="star-4" src="/image/star.png" alt=""/>
                                 </div>
-                                <div class="text-wrapper-4">(166)</div>
+                                <div class="text-wrapper-4">{{$resep->rating}}</div>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="ramen">
+            @endforeach --}}
+            {{-- <div class="ramen">
                 <div class="overlap">
                     <div class="overlap-group"><img class="image" src="/image/resep 5.png"/></div>
                     <p class="text-wrapper">
@@ -185,7 +188,9 @@
                         <div class="line"></div>
                         <div class="read-btn">
                             <div class="div-wrapper">
-                                <div class="text-wrapper-3" ><a href="/detail resep" style="text-decoration: none; color: white;">Read</a></div>
+                                <div class="text-wrapper-3">
+                                    <a href="/detail resep" style="text-decoration: none; color: white;">Read</a>
+                                </div>
                             </div>
                         </div>
                         <div class="last-updated-rating">
@@ -200,10 +205,10 @@
                                 </div>
                                 <div class="text-wrapper-4">(120)</div>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             @include('nav.footer')
         </body>
     </html>

@@ -3,81 +3,74 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Validator; // Mengimpor Validator
 use App\Models\User;
 
 class ProfileController extends Controller
 {
-
-    // public function show($id)
-    // {
-    // $user = User::findOrFail($id);
-    // return response()->json($user);
-    // }
-    
-    // public function update(Request $request, $id)
-    // {
-    // $user = User::findOrFail($id);
-
-    // $validatedData = $request->validate([
-    //     'name' => 'string|max:255',
-    //     'alamat' => 'required|string',
-    //     'email' => 'email|unique:users,email,'.$user->id,
-    //     'no_hp' => 'required|string',
-    //     // Tambahkan aturan validasi lain sesuai kebutuhan
-    // ]);
-
-    // $user->update($validatedData);
-
-    // return response()->json(['message' => 'Profil berhasil diperbarui']);
-    // }
     public function index()
-{
-    $profiles = User::all();
-    return view('/'); 
-}
+    {
+        $user = Auth::user();
+        return view('profile.all', compact('user'));
+        
+    }
 
-public function show($id)
-{
-    $profile = User::findOrFail($id);
-    return response()->json($profile);
-}
+    public function edit($id)
+    {
+        $user = User::findOrFail($id);
+        return view('profile.edit', compact('user'));
+    }
 
-public function store(Request $request)
-{
-    $validatedData = $request->validate([
-        'name' => 'required|string|max:255',
-        'alamat' => 'required|string|max:255',
-        'email' => 'required|email|unique:profiles,email',
-        'no_hp' => 'required|string|max:15',
-    ]);
+    public function update(Request $request, $id)
+    {
+        $profile = User::findOrFail($id);
 
-    $profile = User::create($validatedData);
+        $validatedData = $request->validate([
+            'name' => 'required|string',
+            'email' => 'email|unique:users,email,' . $profile->id, // Perbaiki menjadi $profile->id
+            'alamat' => 'required|string',
+        ]);
 
-    return response()->json(['message' => 'Profil berhasil ditambahkan']);
-}
+        // Periksa jika validasi gagal
+        // if ($request->fails()) {
+        //     return redirect()->back()->withErrors($validatedData)->withInput();
+        // }
 
-public function update(Request $request, $id)
-{
-    $profile = User::findOrFail($id);
+        try {
+            $profile->update($validatedData);
+        } catch (\Throwable $th) {
+            return redirect()->back()->withErrors($th->getMessage())->withInput();
+        }
+        
 
-    $validatedData = $request->validate([
-        'name' => 'required|string|max:255',
-        'alamat' => 'required|string|max:255',
-        'email' => 'required|email|unique:profiles,email,'.$profile->id,
-        'no_hp' => 'required|string|max:15',
-    ]);
+        return redirect()->route('profile')->with('success', 'Profil berhasil diperbarui');
+    }
 
-    $profile->update($validatedData);
+    public function show($id)
+    {
+        $profile = User::findOrFail($id);
+        return response()->json($profile);
+    }
 
-    return response()->json(['message' => 'Profil berhasil diperbarui']);
-}
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'alamat' => 'required|string|max:255',
+            // 'email' => 'required|email|unique:users,email',
+            // 'no_hp' => 'required|string|max:15',
+        ]);
 
-public function destroy($id)
-{
-    $profile = User::findOrFail($id);
-    $profile->delete();
+        $profile = User::create($validatedData);
 
-    return response()->json(['message' => 'Profil berhasil dihapus']);
-}
+        return response()->json(['message' => 'Profil berhasil ditambahkan']);
+    }
+
+    public function destroy($id)
+    {
+        $profile = User::findOrFail($id);
+        $profile->delete();
+
+        return response()->json(['message' => 'Profil berhasil dihapus']);
+    }
 }

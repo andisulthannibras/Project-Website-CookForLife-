@@ -10,7 +10,7 @@
             rel="stylesheet"
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous">
-        <link rel="stylesheet" href="/css/profile.css">
+            <link rel="stylesheet" href="/css/edit-profile.css">
         <!-- Pastikan path ke file CSS sesuai -->
     </head>
     <body>
@@ -39,30 +39,38 @@
                     <div class="details">
                         <p>Details</p>
                     </div>
-                    <div class="Bio">
-                        <div class="text-bio">
-                            <p>Nama</p>
+                    <form action="{{ route('profile.update', $user->id) }}" method="POST">
+                        @csrf                                                 
+                        <div class="Bio">
+                            <div class="text-bio">
+                                <p>Nama</p>
+                            </div>
+                            <div class="textfield-input">
+                                <input type="text" name="name" id="name" value="{{ $user['name'] }}">
+                            </div>
                         </div>
-                        <div class="textfield-bio">
-                            <p>{{$user->name}}</p>
+                        <div class="Bio">
+                            <div class="text-bio">
+                                <p>Alamat</p>
+                            </div>
+                            <div class="textfield-input">
+                                <input type="text" name="alamat" id="alamat" value="{{ $user['alamat'] }}">
+                            </div>
                         </div>
-                    </div>
-                    <div class="Bio">
-                        <div class="text-bio">
-                            <p>Alamat</p>
+                        <div class="Bio">
+                            <div class="text-bio">
+                                <p>Email</p>
+                            </div>
+                            <div class="textfield-bio">
+                                <p>{{$user->email}}</p>
+                            </div>
                         </div>
-                        <div class="textfield-bio">
-                            <p>{{$user->alamat}}</p>
+                        <div class="btn-bawah">
+                            <div class="edit-btn">                                
+                                    <button type="submit">Simpan Perbuhan</button>                                
+                            </div>                
                         </div>
-                    </div>
-                    <div class="Bio">
-                        <div class="text-bio">
-                            <p>Email</p>
-                        </div>
-                        <div class="textfield-bio">
-                            <p>{{$user->email}}</p>
-                        </div>
-                    </div>
+                    </form>                    
                     {{-- <div class="Bio">
                         <div class="text-bio">
                             <p>Nomor</p>
@@ -75,20 +83,7 @@
             </div>
             <div class="profile-about">About</div>
             <a>Aku sangat suka memasak tujuan ku masuk kursus masak karna ingin</a>
-            <a>menambah ilmu masakan dan menamnbah wawasan tentang masakan.</a>
-            <div class="btn-bawah">
-                <div class="edit-btn">
-                    <a href="{{route('profile.edit',$user->id)}}">
-                        <button>edit</button>
-                    </a>
-                </div>
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <div class="logout-btn">
-                        <button>logout</button>
-                    </div>
-                </form>
-            </div>
+            <a>menambah ilmu masakan dan menamnbah wawasan tentang masakan.</a>            
         </div>
         @include('nav.footer')
     </body>

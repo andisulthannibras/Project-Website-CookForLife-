@@ -29,7 +29,6 @@
                         </div>
                         {{-- <div class="mb-4" style="outline: none; border: none;">
                             <input type="text" id="no_hp" name="no_hp" style="outline: none; font-size: 19px; width: 290px; font-weight border-bottom: 20px;" class="border-0 border-bottom" id="exampleFormControlInput1" placeholder="No Hp">
-
                         </div> --}}
                         <div class="mb-4" style="outline: none; border: none;">
                             <input type="email" id="email" name="email" style="outline: none; font-size: 20px; width: 290px; font-weight border-bottom: 20px;" class="border-0 border-bottom" id="exampleFormControlInput1" placeholder="Email">

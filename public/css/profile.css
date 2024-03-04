@@ -167,7 +167,7 @@
 
     .btn-bawah {
         display: flex;
-        margin-left: 900px;
+        margin-left: 850px;
     }
 
     .logout-btn button {
@@ -190,7 +190,8 @@
 
     .edit-btn button {
         border-radius: 15px;
-        width: 140px;
+        text-decoration: none;
+        width: 150px;
         height: 40px;
         color: white;
         font-family: Inika;

@@ -28,12 +28,14 @@ Route::post('/register', [AuthenticationController::class, 'register']);
 
 //Profile Update
 Route::prefix('profiles')->group(function () {
-    Route::get('/', [ProfileController::class, 'index']);
+    Route::get('/profile', [ProfileController::class, 'index']);
     Route::get('/{id}', [ProfileController::class, 'show']);
     Route::post('/', [ProfileController::class, 'store']);
     Route::post('/{id}', [ProfileController::class, 'update']);
     Route::delete('/{id}', [ProfileController::class, 'destroy']);
+    Route::get('/{id}', [ProfileController::class, 'edit']);
+    Route::post('/{id}', [ProfileController::class, 'update']);
 });
 
 //upload image 
-Route::post('/upload-image', [ImageController::class, 'upload']);
+// Route::post('/upload-image', [ImageController::class, 'upload']);
