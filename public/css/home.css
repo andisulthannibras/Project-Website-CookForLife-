@@ -1,19 +1,26 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 h1 {
     font-family: 'inika';
     margin-top: 10%;
     margin-left: 70px;
     font-weight: 700;
-    font-size: 40px;
+    font-size: clamp(28px, 5vw, 40px);
     font-style: normal;
 }
 
 h3 {
     color: #000;
     font-family: Inika;
-    font-size: 25px;
+    font-size: clamp(16px, 3vw, 25px);
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    line-height: 1.5;
     margin-left: 70px;
 }
 
@@ -27,77 +34,228 @@ h3 {
     padding: 15px 12%;
     text-decoration: none;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: clamp(16px, 2.5vw, 20px);
     background: rgba(0, 0, 0, 0.67);
     box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
 }
 
-
-.home .content .image-content {
-    flex-shrink: 0;
-    padding-top: 50px;
+.button-content a:hover {
+    background: rgba(0, 0, 0, 0.85);
+    transform: translateY(-2px);
 }
 
-.content {
+/* Home Section */
+.home .content {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 30px;
 }
 
-.text-content {
+.home .content .text-content {
     flex: 1;
+    min-width: 300px;
 }
 
-.content-items {
+.home .content .image-content {
+    flex: 1;
+    min-width: 300px;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.home .content .image-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Misi Section */
+.misi .content-items {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-button1 {
-    margin-left: 20px;
-}
-
-.misi .content-items {
+    flex-wrap: wrap;
     margin-top: 120px;
     width: 100%;
-    height: 115vh;
+    min-height: 115vh;
+    padding: 40px 20px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-image: url("/image/Background Home.png");
+    gap: 30px;
 }
 
 .misi .content-items .text-content {
     flex: 1;
-    margin-bottom: 200px;
+    min-width: 300px;
     text-align: left;
     color: white;
     font-family: Inika;
-    font-size: 20px;
+    font-size: clamp(16px, 2.5vw, 20px);
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    line-height: 1.6;
+}
+
+.misi .content-items .text-content h3 {
+    color: white;
+    padding-top: 10px;
 }
 
 .misi .content-items .background-image {
     flex: 1;
-    margin-bottom: 200px;
+    min-width: 300px;
+    text-align: center;
+}
+
+.misi .content-items .background-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Visi Section */
+.visi .content-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 100px 20px;
+    gap: 30px;
 }
 
 .visi .content-items .text-content {
     flex: 1;
-    margin-top: 100px;
-    margin-bottom: 200px;
+    min-width: 300px;
     color: black;
     font-family: Inika;
-    font-size: 20px;
+    font-size: clamp(16px, 2.5vw, 20px);
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    line-height: 1.6;
 }
 
 .visi .content-items .image {
-    flex-shrink: 0;
-    padding-top: 100px;
-    padding-bottom: 200px;
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.visi .content-items .image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tablet Styles (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    h1 {
+        margin-left: 40px;
+        margin-top: 5%;
+    }
+
+    h3 {
+        margin-left: 40px;
+    }
+
+    .button-content a {
+        margin-left: 35px;
+        padding: 12px 10%;
+    }
+
+    .misi .content-items {
+        margin-top: 80px;
+        min-height: auto;
+    }
+
+    .visi .content-items {
+        padding: 60px 20px;
+    }
+}
+
+/* Mobile Styles (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    h1 {
+        margin-left: 20px;
+        margin-top: 8%;
+    }
+
+    h3 {
+        margin-left: 20px;
+        line-height: 1.4;
+    }
+
+    .button-content a {
+        margin-left: 20px;
+        padding: 12px 8%;
+    }
+
+    .home .content {
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+
+    .home .content .text-content,
+    .home .content .image-content {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .home .content .image-content {
+        padding-top: 30px;
+    }
+
+    .misi .content-items {
+        flex-direction: column;
+        margin-top: 50px;
+        padding: 30px 15px;
+        min-height: auto;
+    }
+
+    .misi .content-items .text-content,
+    .misi .content-items .background-image {
+        width: 100%;
+        min-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .visi .content-items {
+        flex-direction: column-reverse;
+        padding: 50px 15px;
+    }
+
+    .visi .content-items .text-content,
+    .visi .content-items .image {
+        width: 100%;
+        min-width: 100%;
+        margin-top: 0;
+        margin-bottom: 30px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    h1 {
+        margin-left: 15px;
+        margin-top: 10%;
+    }
+
+    h3 {
+        margin-left: 15px;
+    }
+
+    .button-content a {
+        margin-left: 15px;
+        padding: 10px 6%;
+        font-size: 16px;
+    }
+
+    .home .content,
+    .misi .content-items,
+    .visi .content-items {
+        padding: 15px 10px;
+    }
 }
